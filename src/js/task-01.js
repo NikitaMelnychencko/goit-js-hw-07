@@ -14,14 +14,16 @@
 const valueEl = document.querySelectorAll('.item');
 console.log('Kоличество категорий:', valueEl.length);
 
-//!condition 2
-valueEl.forEach(elem => {
+//  !condition 2
+const result = [...valueEl].reduce((acc, elem) => {
   const categoryEl = elem.querySelectorAll('h2');
   const listValueEl = elem.querySelectorAll('li');
 
-  console.log('Категория:',categoryEl[0].textContent);
-  console.log('Количество элементов:',listValueEl.length);
+  console.log('Категория:', categoryEl[0].textContent);
+  console.log('Количество элементов:', listValueEl.length);
+  acc.push({ category: categoryEl[0].textContent, amountOfElements: listValueEl.length })
+  return acc
+}, [])
 
-
-})
+console.log(result);
 
