@@ -14,6 +14,42 @@
       color: #424242;
       line-height: 1.5;
     }
+
+    /*reset*/
+    img {
+      display: block;
+      max-width: 100%;
+      min-height: auto;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    /*style*/
+    .gallery {
+      display: flex;
+      align-content: center;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .gallery__item {
+      display: block;
+
+    }
+
+    .gallery__image {
+      height: 1000px;
+      width: 2000px;
+      background-size: cover;
+    }
+
+    .gallery__item+.gallery__item {
+      margin-left: 20px;
+    }
   </style>
 </head>
 

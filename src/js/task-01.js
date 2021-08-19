@@ -25,5 +25,5 @@ const result = [...valueEl].reduce((acc, elem) => {
   return acc
 }, [])
 
-console.log(result);
+console.log(...result);
 

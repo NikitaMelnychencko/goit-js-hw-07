@@ -21,15 +21,16 @@ const images = [
   },
 ];
 
-images.forEach(image => {
-  const itemIsAdd = document.createElement('li')
-  itemIsAdd.classList.add('gallery-list__item')
+ const result = images.reduce( (string, image) => string + `<li><img src="${image.url}" alt="${image.alt}"></li>`,
+   ""
+ )
+const listEl = document.querySelector('ul')
+listEl.classList.add('gallery')
+listEl.insertAdjacentHTML('beforeend', result)
 
-  const imgIsAdd = document.createElement('img')
-  itemIsAdd.classList.add('gallery-list__img')
-  imgIsAdd.src = `${image.url}`
-  imgIsAdd.alt = `${image.alt}`
-  itemIsAdd.appendChild(imgIsAdd)
-
-    
-} )
+const itemEl = document.querySelectorAll('li')
+itemEl.forEach(item => {
+  item.classList.add('gallery__item')
+  const imageEl = item.querySelector('img')
+  imageEl.classList.add('gallery__image')
+})
