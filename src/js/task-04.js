@@ -10,15 +10,15 @@
 // функций и обновление интерфейса
 
 const counter = {
-  value: 0,
+  counterValue: 0,
   increment() {
     console.log('increment->this', this);
-    this.value += 1;
+    this.counterValue += 1;
 
   },
   decrement() {
     console.log('decrement->this', this);
-    this.value -= 1;
+    this.counterValue -= 1;
   }
 
 }
@@ -34,12 +34,12 @@ decrementBtn.addEventListener('click', ()=>{
 
   counter.decrement();
   console.log(counter);
-  valueEj.textContent = counter.value;
+  valueEj.textContent = counter.counterValue;
 });
 incrementBtn.addEventListener('click', ()=>{
   console.log('click on increment');
 
   counter.increment();
   console.log(counter);
-  valueEj.textContent = counter.value;
+  valueEj.textContent = counter.counterValue;
 });
