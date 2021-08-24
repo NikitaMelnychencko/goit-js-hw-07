@@ -17,15 +17,27 @@ form.addEventListener('blur', onInputExamination);
 function onInputExamination(event) {
   
   const value = event.currentTarget.value;
-  if (value.length >= Number(form.getAttribute('data-length'))) {
-    form.classList.remove('invalid')
-    form.classList.add('valid')
-    
+
+  if (value.length === Number(form.getAttribute('data-length'))) {
+    functionValid('invalid','valid')
   } else {
-    form.classList.remove('valid')
-    form.classList.add('invalid')
-  }
-  
-  
-  
+    functionInvalid('valid','invalid')
+  }  
+}
+
+function functionValid(invalid, valid) {
+  if (form.classList.contains(invalid)) {
+    form.classList.replace(invalid, valid)
+    return
+  } 
+  form.classList.add(valid)
+}
+
+function functionInvalid(valid, invalid) {
+  if (form.classList.contains(valid)) {
+    form.classList.replace(valid,invalid)
+    return
+  } 
+  form.classList.add(invalid)
+ 
 }
